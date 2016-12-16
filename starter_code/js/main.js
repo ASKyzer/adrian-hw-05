@@ -26,9 +26,13 @@ $("#city-input").submit(function(event){
   } else if (cityInput === 'austin') {
     $("body").removeClass();
     $("body").addClass('austin');
+  } else if (cityInput === 'paris') {
+    $("body").removeClass();
+    $("body").addClass('paris');
   }
+
   else {
-    alert("Please enter another city");
+    document.reset();
   }
 
 event.preventDefault();
