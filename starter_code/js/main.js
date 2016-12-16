@@ -4,11 +4,13 @@ $(document).ready(function(){
   var type = ($('#city-type').attr("type"));
   alert("Type of input box is: " + type);
 
+  console.log($(".title").html());
+
 $("#city-input").submit(function(event){
 
 
   //you can chain the action
-  var cityInput = $("#city-type").val().toLowerCase();
+  var city = $("#city-type").val().toLowerCase();
 
   //I had this setup earlier before chaning the action
   // var enteredCity = $("city-type").val();
@@ -16,24 +18,24 @@ $("#city-input").submit(function(event){
   // console.log(cityInput);
 
 //discovered .match  Yay!
-  if (cityInput.match(/^(sf|san francisco|san fran|bay area|sfo)$/)) {
+  if (city.match(/^(sf|san francisco|san fran|bay area|sfo)$/)) {
     $("body").removeClass();
     $("body").addClass('sf');
     console.log("aslkdjfasj");
-  } else if (cityInput.match(/^(nyc|new york|new york city)$/)) {
+  } else if (city.match(/^(nyc|new york|new york city)$/)) {
     $("body").removeClass();
     $("body").addClass('nyc');
-  } else if (cityInput.match(/^(la|los angeles|l\.a\.|lax)$/)) {
+  } else if (city.match(/^(la|los angeles|l\.a\.|lax)$/)) {
     $("body").removeClass();
     $("body").addClass('la');
-  } else if (cityInput === 'sydney') {
+  } else if (city === 'sydney') {
     $("body").removeClass();
-    $("body").addClass('sydney' || cityInput === 'syd');
-  } else if (cityInput === 'austin') {
+    $("body").addClass('sydney' || city === 'syd');
+  } else if (city === 'austin') {
     $("body").removeClass();
     $("body").addClass('austin');
   // used || as required by homework assignment
-  } else if (cityInput === 'paris' || cityInput === 'cdg' || cityInput === 'city of lights') {
+  } else if (city === 'paris' || city === 'cdg' || city === 'city of lights') {
     $("body").removeClass();
     $("body").addClass('paris');
   }
